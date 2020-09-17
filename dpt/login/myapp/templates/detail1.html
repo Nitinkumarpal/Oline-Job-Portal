@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block content %}
+   <div class="container">
+      <div class="row" style="margin-top: 6%">
+        <div class="col-sm-8 blog-main">
+            <div class="blog-post">
+                
+                <div class="row">
+                  <div class="card">
+                      <div class="card-body">                           
+                          <p>  <h3>{{ jbs.name }}</h3></p>
+
+                          <a href="{{ jbs.get_absolute_url1 }}">
+                                <img src="{% if jbs.image %} {{ jbs.image }} {% else %} {% static 'img/1.png' %} {% endif %}" alt="..." style="height: 130px; width: auto">
+                            </a>                          </div>
+                          <div class="col-md-76" style="padding-left: 20px">
+
+                              <h4><a href=""><h4> qualification:</a></h4>{{ jbs.qualification}}</h4>
+                              <p ><a href=""> Experince: </a>{{ jbs.Experince }}</p>       
+                                <p ><a href="">resume : </a>{{ jbs.resume}}</p>
+
+                              <p ><a href="">  contact_no: </a>{{ jbs.contact_no }}</p>
+                              <a href="{{ jbs.email }}">{{ jbs.email }}</a>
+
+
+
+
+                              <p><h4><a href="">about the jobseeker :</a></h4><h5>{{ jbs.about|safe|linebreaksbr }}</h5>
+                                <button class="btn btn-outline-warning" >GO</button>
+                                <h3>***************</h3>
+
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div><!-- /.blog-post -->
+        </div><!-- /.blog-main -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+{% endblock %}

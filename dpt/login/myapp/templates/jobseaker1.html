@@ -1,0 +1,35 @@
+<html>
+        <head>
+                {% load static %}
+                <!-- Prism CSS -->
+                <link href="{% static "tinymce/css/prism.css" %}" rel="stylesheet">
+                <!-- Compiled and minified CSS -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+                <!-- Compiled and minified JavaScript for Materialize CSS -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            </head>
+        </head>
+    <marquee><h3>jobseeker's data</h3></marquee>
+
+    <body>
+        {% for jbs in jobseaker %}
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <a href="{{ j.get_absolute_url }}">
+                    <img src="{% if jbs.image %} {{ jbs.image.url }} {% else %} {% static 'img/1.png' %} {% endif %}" alt="..." style="height: 130px; width: auto">
+                </a>
+                <div class="caption">
+                    <h3 class="text-center">
+                        <a href="{{ jbs.get_absolute_url }}">{{jbs.name  }}</a>
+                    </h3>
+                    <p class="text-center"> {{ jbs.qualification}}</p>
+                    <p class="text-center"> {{ jbs.contact_no }}</p> 
+                     <button class="btn btn-outline-danger"  type="#">GO</button>
+                </div>
+            </div>
+          </div>
+        {% endfor %}   
+
+            
+    </body>
+    </html>

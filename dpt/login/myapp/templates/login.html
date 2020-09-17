@@ -1,0 +1,40 @@
+{% extends 'basee.html' %}
+
+{% block content %}
+    <br>
+    <form method="POST" action="/login/">
+        {% csrf_token %}
+        <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                  <li class="breadcrumb-item"><a href="{% url 'register' %}" target="blank">register</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">login</li>
+                </ol>
+              </nav>
+              
+        <legend class="border-bottom mb-4">login</legend>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+          <strong>ALERT!..</strong> If you are not regsiter then first you register your self and then again login
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        {{form.as_p}}
+        <button class="btn btn-outline-danger"   type="reset">RESET</button>
+        <button class="btn btn-outline-success"  type="submit">SUBMIT</button>
+        
+        <!-- <button style="background-color:rgb(237, 240, 107); color:blue" class="btn btn-outline-info" type="reset">Reset</button> -->
+
+        <!-- <button style="background-color:rgb(237, 240, 107); color:blue" class="btn btn-outline-info" type="submit">Submit</button> -->
+    </form>
+    
+    
+
+    need an account <a href="/register" target="blank"><strong>sign up</strong></a> instead.<br>
+    <!-- Are you want to  <a href="{% url 'home' %}" target="blank"><strong>logout</strong></a> instead? -->
+    Are you want to  <a href="/admin/logout" target="blank"><strong>logout</strong></a> instead?
+
+  
+{% endblock %}
+
+

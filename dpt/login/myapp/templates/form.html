@@ -1,0 +1,25 @@
+<html>
+<head><title>Login</title></head>
+<body> <form method="post" action="admin/myapp/company_login/{{b}}">
+<!-- <form action="/log/" method="get"> -->
+    {% csrf_token %}
+ <table> 
+       
+ 
+<tr>  
+    <td class="tdLabel"><label for="register_name" class="label">Enter name:</label></td>  
+    <td><input type="text" name="a" value="" id="register_name" style="width:160px"/></td>  
+</tr>  
+<tr>  
+    <td class="tdLabel"><label for="register_password" class="label">Enter password:</label></td>  
+    <td><input type="password" name="b" id="register_password" style="width:160px"/></td>  
+</tr>   
+ 
+<tr>  
+    <td colspan="2"><div align="right"><input type="submit" id="register_0" value="GO"/>  
+</div></td>  
+</tr>  
+</table>  
+</form>  
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<body style="margin-bottom: 0px; background-color:rgb(196, 238, 248);">
+    <marquee><h3>upcomming jobs</h3></marquee>
+   <div class="container-fluid">
+      <div class="row" style="margin-top: 6%">
+        <div class="col-sm-8 blog-main">
+            <table>
+                <tr><td>
+          <div class="blog-post">
+              <div class="row">
+                    {% for jbs in jobseaker %}
+                    <div>
+                      <div class="col-md-4">
+                        <div class="thumbnail">
+                            <a href="{{ jbs.get_absolute_url1 }}">
+                                <img src="{% if jbs.image %} {{ jbs.image.url }} {% else %} {% static 'img/1.png' %} {% endif %}" alt="..." style="height: 130px; width: auto">
+                            </a>
+                            <div class="caption">
+                                <h3 class="text-center">
+                                    <a href="{{ jbs.get_absolute_url1 }}">{{ jbs.name }}</a>
+                                </h3>
+                                <p class="text-center"><h5>qualification :{{ jbs.qualification }}</h5></p>
+                                <p class="text-center"><h5> contact_no:{{ jbs.contact_no }}</h5></p>
+
+
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                   
+                              
+                {% endfor %}
+              </div>
+          </div><!-- /.blog-post -->
+         </div>
+  
+        </div><!-- /.row -->
+  
+      </div><!-- /.container -->
+    {% endblock %}

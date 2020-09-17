@@ -1,0 +1,385 @@
+<!DOCTYPE HTML>
+{% load static %}
+{% load staticfiles %}
+<html lang="en">
+<head>
+    <metacharset="UTF=8">
+    <title>{%block title %}online job portal{%endblock%}</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+        
+        /* Full-width input fields */
+        input[type=text], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        /* Set a style for all buttons */
+        button {
+            background-color: rgb(45, 238, 78);
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        /* Extra styles for the cancel button */
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+        
+        /* Center the image and position the close button */
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+        
+        img.avatar {
+            width: 30%;
+            border-radius: 30%;
+        }
+        
+        .container {
+            padding: 16px;
+        }
+        
+        span.psw {
+            float: right;
+            padding-top: 16px;
+        }
+        
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+        
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #75f3fc;
+            margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+            border: 1px solid #888;
+            width: 50%; /* Could be more or less, depending on screen size */
+        }
+        
+        /* The Close Button (x) */
+        .close {
+            position: absolute;
+            right: 25px;
+            top: 0;
+            color: #000;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: red;
+            cursor: pointer;
+        }
+        
+        /* Add Zoom Animation */
+        .animate {
+            -webkit-animation: animatezoom 2s;
+            animation: animatezoom 2s
+        }
+        
+        @-webkit-keyframes animatezoom {
+            from {-webkit-transform: scale(0)} 
+            to {-webkit-transform: scale(1)}
+        }
+            
+        @keyframes animatezoom {
+            from {transform: scale(0)} 
+            to {transform: scale(1)}
+        }
+        
+        /* Change styles for span and cancel button on extra small screens */
+        @media screen and (max-width: 300px) {
+            span.psw {
+               display: block;
+               float: none;
+            }
+            .cancelbtn {
+               width: 100%;
+            }
+        }
+
+        
+        body { 
+         background: url('{% static "img/1111.jpg" %}') no-repeat center center fixed; 
+         -webkit-background-size: cover;
+         -moz-background-size: cover;
+         -o-background-size: cover;
+         background-size: cover;
+        }
+        footer {
+    background-color: rgb(107, 113, 114);
+    padding: 70px;
+    text-align: center;
+    color: rgb(247, 244, 244);}
+
+    .dropbtn {
+      background-color: rgb(25, 252, 184);
+      color: black;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    /* The container <div> - needed to position the dropdown content */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    /* Dropdown Content (Hidden by Default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ec6526;
+      min-width: 110px;
+      box-shadow: 0px 8px 16px 0px rgba(243, 62, 62, 0.2);
+      z-index: 1;
+    }
+    
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    /* Change color of dropdown links on hover */
+    .dropdown-content a:hover {background-color: #cbe4e0}
+    
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    
+    /* Change the background color of the dropdown button when the dropdown content is shown */
+    .dropdown:hover .dropbtn {
+      background-color: #ecd612;
+    }myHero {
+    display: block;
+    text-align:center;
+    background-color:rgb(245, 44, 37);
+    padding: 50px;
+    font-size: 30px;}
+        </style>
+
+<script src="{% static 'js/jquery.min.js' %}"type="text/javascript"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"type="text/javascript"></script>
+<script type="text/javascript">
+  function showMessage(){
+    var a=confirm("For this u want to be login or register your self");
+	if(a==true)
+	{
+		document.write("okkay");
+		return true;
+	}
+	
+  }
+  function showMessage1(){
+    alert("your suggestions may be usefull for us......");
+  }
+</script>
+</head>
+<body>
+
+<table width="100%" height="10%">
+<tr><td><img src='{% static "img/onlinejob.png" %}' width=100% height=60%></td></tr>
+</table>
+
+<table width="100%" height="10%">
+<tr><td>
+{% include 'navbar.html' %}
+</td></tr>
+</table>
+
+
+{% block content%}
+{%endblock%}
+  
+    
+<table>
+    <tr><td>
+
+<table  width="10%" height="40%">
+<tr><td>
+<img src='{% static "img/search.jpg" %}')width=30% height=20%>
+<form action="http://www.google.com/search" width=30% height=20%>
+<input type="text" name='q' placeholder="Your search"/>
+<input type='submit'class="btn btn-outline-success"  value='search' />
+</form></td></tr>
+</table>
+</td>
+
+<td>
+<table>
+<tr><td>
+<p><pre><h2>
+<a href =google class="badge badge-secondary">google</a>
+<a href =hcl class="badge badge-secondary">HCL Company</a>
+<a href =https://www.microsoft.com/en-us/ class="badge badge-secondary">Microsoft company</a>
+<a href =https://www.oracle.com/index.html class="badge badge-secondary">Oracle company </a>
+<a href ="https://www.infosys.com/about/Pages/history.aspx" class="badge badge-secondary">Infosys company</a>
+</h2></pre></p> 
+</td></tr>
+</table>
+</td>
+
+
+ 
+<!--  
+        <form action="/log/" method="get">
+        {% csrf_token %}
+        name <input type="text" name="name" value= '{% if submitbutton == "Submit" %} {{ name }} {% endif %}'/><br><br>
+        password <input type="text" name="password" value= '{% if submitbutton == "Submit" %} {{password}} {% endif %}'/><br><br>
+        <button class="btn btn-outline-danger"  type="reset">RESET</button>
+        <input type="submit"class="btn btn-outline-success" name="Submit" value="Submit"/>
+        </form>
+        
+        
+        {% if submitbutton == "Submit"  %} 
+        <h1> Your first name is {{ name }}</h1>
+        <h1> Your last name is {{password} }</h1>
+       
+        {% endif %}
+        
+       -->
+<!-- 
+<td align="right">
+<table> 
+<tr>      
+<td>
+<form>
+<table width=70% > 
+<tr><td>USER NAME</td><td><input type="text" name="username" placeholder="username"></td></tr>
+<tr><td>PASSWORD</td><td><input type="text" name="password"placeholder="password"></td></tr> 
+<tr><td><button class="btn btn-outline-danger"  type="reset">RESET</button></td>    
+<td><button class="btn btn-outline-success" type="submit">SUBMIT</button></td></tr>    
+</table></form> 
+</td></tr></table>
+</td> -->
+<!-- 
+<br> 
+ <a href=#><img src='{% static "img/banner14.jpg" %}'align="center" width=40% height=20%></a> 
+</td> -->
+
+
+<!-- <form action="/your_name/" method="post">
+    <label for="your_name">Your name: </label>
+    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+    <input type="submit" value="OK">
+</form> 
+<td align="right">
+<table align=right>
+  
+<tr><td ><div class="dropdown">
+    <button class="dropbtn"><h5>Admin</h5></button>
+    <div class="dropdown-content">
+      <a href="/register">Register</a>
+      <a href="{% url 'login' %}">Login</a>
+      <a href="/admin/logout">Logout</a>
+    </div>
+  </div></td><td></td>
+  <td align=left><div class="dropdown">
+      <button class="dropbtn"><h5>Company</h5></button>
+      <div class="dropdown-content">
+        <a href="admin/myapp/company_login/add">Register</a>
+        <a href="#">Login</a>
+         <a href="#">Logout</a> 
+      </div>
+    </div></td><td></td>
+    <td align=left><div class="dropdown">
+        <button class="dropbtn"><h5>Jobseeker</h5></button>
+        <div class="dropdown-content">
+          <a href="admin/myapp/jobseaker_login/add">Register</a>
+          <a href="#">Login</a>
+          <!<a href="#">Logout</a> 
+        </div>
+      </div></td></tr>
+</table>
+
+-->
+
+<td><td><td></td></td>
+<td>
+<table>
+<tr><td>
+        <div class="dropdown">
+            <button class="dropbtn"><h5>Register</h5></button>
+            <div class="dropdown-content">
+              <a href="/register">as Admin</a>
+              <a href="add_jobseaker">as Jobseaker</a>
+              <a href="add_company">as jobrecriter</a>
+            </div></div></td>
+        
+     <td>      
+        <div class="dropdown">
+        <button class="dropbtn"><h5>Login</h5></button>
+        <div class="dropdown-content">
+        <a href="/user_login">as Admin</a>
+        <a href="/user_login">as USER</a>
+        </div></div>
+    </td>
+</tr></table>
+</td>
+
+        
+</tr></table>
+        
+            <!-- </td> -->
+
+
+    
+<!-- <tr><td align=right><h2><a href ="/register">Sign up</a></h2></td></tr> 
+<tr><td align=right><h2><a href =admin/myapp/company_login/add>Register as acompany</a></h2></td></tr>
+<tr><td align=right><h2><a href =admin/myapp/jobseaker_login/add>Register as a fresher</a></h2></td></td></tr>
+ <tr><td><div></div></td></tr> -->
+
+
+
+
+
+<myHero>OVER 5000000+ HAPPY CUTOMERS</myHero>
+<footer>
+    <img src='{% static "img/thQ.jpg" %}' alt="background" style="width:250px;height:150px;">
+    <p>
+    <h1>DELHI</h1>
+        <p>New Delhi is the capital city of INDIA.<br> It is the most populous city in the INDIA, with<br> a metropolitan area of over 13 million inhabitants.</p>
+        <p>Standing on the River Yamuna, Delhi has<br> been a major settlement for two millennia, its history going back<br> to its founding by the Romans, who named it Indraprasth.</p>
+    </p>
+    </footer>
+</body>
+</html>

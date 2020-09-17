@@ -1,0 +1,297 @@
+<!DOCTYPE HTML>
+{% load static %}
+{% load staticfiles %}
+<html>
+<head>
+<title>online job portal </title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+ </head>
+<body>
+<style>
+myHero {
+    display: block;
+    text-align:center;
+    background-color:tomato;
+    padding: 50px;
+    font-size: 30px;}
+footer {
+    background-color: #777;
+    padding: 100px;
+    text-align: center;
+    color: white;}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;}
+tr:nth-child(even) {
+    background-color: #dddddd;}
+
+*{margin:0;box-sizing: border-box;}
+.topic-item{
+font-family:'roboto',sans-serif;
+background-color:powderBlue;
+padding:50px;
+margin-bottom:30px;
+border:1px solid gray;
+clear:both;
+position:relative;} 
+#search{width:400px;padding:2px;overflow:hidden;}
+
+*{margin:0;padding:0;}
+.container{width:80%;max-width:1200px;margin:auto;}
+header{background-color:#0e62b2;height:160px;}
+header .logo-2-sec{float:left;margin-top:10px;}
+header .navigation-bar{float:right}
+header .navigation-bar ul li{display:inline-block}
+header .navigation-bar ul li a{text-decoration:none;padding:8px;display:block;
+padding:27px 20px;textcolor:none;-webkit-text-fill-color:white;font-size:14px;}
+.banner-sec{background: url('{% static "img/onlinejob.png" %}');background-repeat:no-
+repeat;background-size:cover;background-size:100% 100%;height:300px;}
+</style>
+<header>
+<!-- <div class="banner-sec">
+</div> -->
+<div class="container">
+<div class="logo-2-sec">
+<a href="#"><img src='{% static "img/onlinejob.png" %}' height=70px width=100px alt="RO" ></a>
+</div>
+<div class="navigation-bar">
+<ul>
+<li><a href=""><i class="fas fa-home"></i> HOME</a></li>
+
+<li><a href="company_data"><i class="fab fa-bandcamp"></i> JOBS</a></li>
+<li><a href="jobseaker_data"><i class="fab fa-bandcamp"></i>JOBSEAKER DATA</a></li>
+
+<li><a href="admin/login/?next=/admin/"><i class="fas fa-user-plus"></i> ADMIN</a></li>
+<li><a href="add_company"><i class="fas fa-sign-in-alt"></i>Add job</a></li>
+<li><a href="add_jobseaker"><i class="fas fa-user-plus"></i>Add user</a></li>
+<!-- <li><a href="register"><i class="fas fa-user-plus"></i> SIGNUP</a></li> -->
+{% if user.is_authenticated %}
+<li><a href="{% url 'logout' %}"><i class="fas fa-newspaper"></i> LOGOUT</a></li> {% endif %}
+
+</ul>
+</div><!-- navigation-bar-->
+</container>
+</header>
+
+
+<!-- <h2 style="background-color:#0e62b2;"> -->
+
+   <style>
+        * {box-sizing: border-box;}
+        body {font-family: Verdana, sans-serif;}
+        .mySlides {display: none;}
+        img {vertical-align: middle;}
+        
+        /* Slideshow container */
+        .slideshow-container {
+          max-width: 1000px;
+          position: relative;
+          margin: auto;
+        }
+        
+        /* Caption text */
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+        
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+        
+        /* The dots/bullets/indicators */
+        .dot {
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        
+        .active {
+          background-color: #717171;
+        }
+        
+        /* Fading animation */
+        .fade {
+          -webkit-animation-name: fade;
+          -webkit-animation-duration: 1.5s;
+          animation-name: fade;
+          animation-duration: 1.5s;
+        }
+        
+        @-webkit-keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        @keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+          .text {font-size: 11px}
+        }
+        </style>
+        </head>
+        <body bgcolor= #f2f2f2>
+            <div class="slideshow-container"> 
+           
+            <div class="mySlides fade">
+                    <div class="numbertext"></div>
+                    <img src='{% static "img/onlinejob.png" %}'  width="100%" height="50%">
+                    <div class="text"></div>
+                    </div>
+
+             
+                    <div class="mySlides fade">
+                        <div class="numbertext"></div>
+                        <img src='{% static "img/inter.jpg" %}'  width="1000px" height="332">
+                        <div class="text"></div>
+                      </div>
+                      
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src='{% static "img/ss.jpg" %}'  width="1000px" height="330px">
+          <div class="text"></div>
+        </div>
+       
+       
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src='{% static "img/banner14.jpg" %}'  width="1000px" height="332">
+            <div class="text"></div>
+          </div>
+          
+      
+        
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src='{% static "img/Tec.jpg" %}'  width="870px" height="333px">
+          <div class="text"></div>
+        </div>
+        
+        </div>
+        <br>
+        
+        <div style="text-align:center">
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+
+        </div>
+        
+        <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 2500); // Change image every 2 seconds
+        }
+        </script><div class="slideshow-container">
+
+
+
+
+
+
+<form action="http://www.google.com/search" method='GET'> search google:
+<input type="text" maxlength="50" name='a' placeholder="enter what your want to seach"><i class="fa fa-search"></i>
+<input type="submit" value="search" >
+<br><br>
+</form>
+</h2><br>
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Work status</th>
+    <th>Country</th></tr>
+  <tr>
+    <td>Apple</td>
+    <td>CEO</td>
+    <td>India</td></tr>
+  <tr>
+    <td>Microsoft</td>
+    <td>Developer python</td>
+    <td>Mexico</td></tr>
+  <tr>
+    <td>Apple</td>
+    <td>Django trainer</td>
+    <td>Austria</td></tr>
+  <tr>
+    <td>Samsung</td>
+    <td>Product manager</td>
+    <td>UK</td></tr>
+  <tr>
+    <td>Laughing Bacchus </td>
+    <td>Yoshi </td>
+    <td>Canada</td></tr>
+  <tr>
+    <td>Blue dart</td>
+    <td>Giovanni</td>
+    <td>Italy</td></tr>
+</table>
+
+<br><br>
+
+<div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="fab fa-autoprefixer"></i><a href="http://rdec.in/"><h3><marquee>Latest jobs fair in R.D.E.C Duhai Ghaziabad</marquee></h3></a> </div>
+<div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="fas fa-heading"></i><a href="https://www.android.com/"><h3><marquee><pre> <h2>upcomming oportunity in android company...</h2></pre></marquee></h3></a></div>
+<div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="fab fa-etsy"></i><h3><a href="https://aktu.ac.in/"><marquee> <pre>       <h2>              Latest job fair orgainised by AKTU ...</h2></pre></marquee></h3></a></div>
+<div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="fab fa-tumblr-square"></i><a href="https://www.infosys.com/about/Pages/history.aspx"><marquee><pre>   <h2>                Direct interview for the post of software developer in Infosys Company</h2></pre></marquee></a></div>
+<div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="fab fa-cuttlefish"></i><a href="https://www.hcl.com/"><h3><marquee><pre><h2>requirement for technical expert in HCL</h2></pre></marquee></h3></a></div>
+<div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="fab fa-fonticons"></i><a href="http://cashcaro.com/"><h3><marquee><pre> <marquee><h2>work as android developer in Cashkaro.com .....          </h2> </marquee> </pre></marquee></h3></a></div>
+<!-- <div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="fas fa-italic"></i></div>
+<div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="fab fa-js-square"></i></div>
+<div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="fab fa-kickstarter-k"></i></div>
+<div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="fab fa-medium-m"></i></div>
+<div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="fas fa-circle-notch"></i></div>
+<div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="fab fa-product-hunt"></i></div>
+<div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="fab fa-quora"></i></div>
+<div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="far fa-registered"></i></div>
+<div class="topic-item" itemscope itemtype="https://www.routertechnicalsupport.com/how-do-i-log-into-my-zyxel-router"><i class="fab fa-stripe-s"></i></div>
+ -->
+<myHero>OVER 5000000+ HAPPY CUTOMERS</myHero>
+<footer>
+<img src='{% static "img/thQ.jpg" %}' alt="background" style="width:250px;height:150px;">
+<p>
+<h1>DELHI</h1>
+    <p>New Delhi is the capital city of INDIA.<br> It is the most populous city in the INDIA, with<br> a metropolitan area of over 13 million inhabitants.</p>
+    <p>Standing on the River Yamuna, Delhi has<br> been a major settlement for two millennia, its history going back<br> to its founding by the Romans, who named it Indraprasth.</p>
+</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+{% endblock %}
+{% block content %}
+   <div class="container">
+      <div class="row" style="margin-top: 6%">
+        <div class="col-sm-8 blog-main">
+            <div class="blog-post">
+                
+                <div class="row">
+                  <div class="card">
+                      <div class="card-body">                           
+                          <p>  <h3>{{ cmpy.Company_name }}</h3></p>
+
+                              <img src="{% if cmpy.upload_logo %} {{ cmpy.upload_logo.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}" alt="..." style="height: 170px; width: auto">
+                          </div>
+                          <div class="col-md-76" style="padding-left: 20px">
+
+                              <h4><a href=""><h4>job :</a></h4>{{ cmpy.upcomming_jobs }}</h4>
+                              <p ><a href=""> years_of_stablish: </a>{{ cmpy.years_of_stablish }}</p>       
+                              <p ><a href="">contact no : </a>{{ cmpy.contact_no }}</p>
+                              <p ><a href=""> email : </a>{{ cmpy.email }}</p> 
+                              <p ><a href="">location : </a>{{ cmpy.location }}</p>
+                            
+                              
+                              
+                              
+
+
+
+
+
+                              <p><h4><a href="">about the company :</a></h4><h5>{{ cmpy.description|safe|linebreaksbr }}</h5>
+                                <button class="btn btn-outline-warning" >GO</button>
+                                <h3>***************</h3>
+
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+            </div><!-- /.blog-post -->
+        </div><!-- /.blog-main -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+{% endblock %}

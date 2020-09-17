@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>jobseeker details  </title>
+</head>
+
+<body>
+<h1>Create a Post </h1>
+<form action="" method="POST">
+{% csrf_token %}
+Name :<input type="text" name="name"/><br/>
+dob:<input type="text" name="dob"/>
+qualification:<input type="text" name="qualification"/><br/>
+experience:<input type="text" name="Experince"/><br/>
+name:<input type="text" name="name"/><br/>
+contact_no:<input type="text" name="contact_no"/><br/>
+about:<textarea cols="35" rows="8" name="about">
+</textarea><br/>
+<input type="submit" value="Post"/>
+</form>
+</body>
+
+</html>

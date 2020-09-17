@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <br>
+    <form method="POST">
+        {% csrf_token %}
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+              <!-- <li class="breadcrumb-item"><a href="{% url 'register' %}" target="blank">register</a></li> -->
+              <li class="breadcrumb-item active" aria-current="page">Register</li>
+            </ol>
+          </nav>
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>ALERT!..</strong> this registration is only for admin ......!
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        {{form.as_p}}
+        <button style="background-color:rgb(237, 240, 107); color:blue" class="btn btn-outline-info" type="reset">Reset</button>
+
+        <button style="background-color:rgb(237, 240, 107); color:blue" class="btn btn-outline-info" type="submit">Submit</button>
+    </form>
+
+    If you already have an account <a href="{% url 'login' %}" target="blank"><strong>login</strong></a> instead.
+    <!-- Are you want to  <a href="{% url 'home' %}" target="blank"><strong>logout</strong></a> instead? -->
+
+{% endblock %}
+
+

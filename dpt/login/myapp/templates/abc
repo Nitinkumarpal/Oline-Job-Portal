@@ -1,0 +1,40 @@
+
+       <!--   {% if request.user.is_authenticated %}
+        <a href="admin/auth/user/1" class="dropdown-toggle" data-toggle="dropdown" style="color: #da1515">{{ request.user.username }}<b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="">logout</a></li>
+            {% else %}
+          <li class="divider"></li>
+          <li><a href="/jobseaker_login " style="color: #dd3232">Sign in</a></li>
+         <li><a href="/register" style="color: #be2424">Sign up</a></li>
+        </ul>
+         {% endif %}
+      -->
+<!--   
+<caption><b>Login</b></caption>       
+
+       {% if request.company_login.is_authenticated %}
+       <p>Welcome {{company_login.username }} </p> 
+       {% endif %}
+       {% if user.is_authenticated %}
+  <div id="display_something">...</div>
+{% else %}
+  <p>Please Log in</p>
+{% endif %}
+
+
+
+
+<tr><td>USER ID</td><td><input type=text></td></tr>
+<tr><td>PASSWORD</td><td><input type=text></td></tr>
+<tr><td></td><td><input type=submit value=Login></td></tr>
+</table>
+<br>
+
+ -->
+
+<!--<form action="/your-name/" method="post">
+    <label for="your_name">Your name: </label>
+    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+    <input type="submit" value="OK">
+</form>-->
